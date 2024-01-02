@@ -4,20 +4,20 @@ public class NinetyNineBottles {
     
     func playSong() {
         
-        for i in (1...beer).reverse() {
+        for i in (1...beer).reversed() {
             
             let next = i == 1 ? 0 : (i-1)
             
-            print("\(i) \(self.bottleString(i)) of beer on the wall, \(i) \(self.bottleString(i)) of beer.\n"
+            print("\(i) \(self.bottleString(beer: i)) of beer on the wall, \(i) \(self.bottleString(beer: i)) of beer.\n"
                 + "Take one down and pass it around, "
-                + "\(next) \(self.bottleString(i-1))" + " of beer on the wall.")
+                + "\(next) \(self.bottleString(beer: i-1))" + " of beer on the wall.")
             
         }
         
     }
     
     func bottleString(beer:Int) -> String {
-        return (beer == 1) ? "bottle" : "bottles"
+        return beer == 1 ? "bottle" : "bottles"
     }
     
 }
