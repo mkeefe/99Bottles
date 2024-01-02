@@ -6,6 +6,6 @@ Used to test out programming concepts and test playgrounds. Feel free to fork, w
 Languages
 - [x] Swift
 - [x] Python
-- [ ] PHP
-- [ ] Ruby
+- [x] PHP
+- [x] Ruby
 - [ ] Java
