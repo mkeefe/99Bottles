@@ -5,10 +5,11 @@ const getBottleString = (beer: number): string => beer == 1 ? 'bottle' : 'bottle
 const playSong = (withInfo: boolean = true) => {
   if (withInfo) console.info('[Start song]');
 
-  for (let i: number = totalBeers;  i > 0; i--) {
-    let bottleString = getBottleString(i);
-    let lineOfSong = `${i} ${bottleString} of beer on the wall, ${i} ${bottleString} of beer. `
-      + `Take one down and pass it around, ${i-1} ${getBottleString(i-1)} of beer on the wall.`;
+  let beersRemaining: number = totalBeers;
+  while(beersRemaining > 0) {
+    let bottleString = getBottleString(beersRemaining);
+    let lineOfSong = `${beersRemaining} ${bottleString} of beer on the wall, ${beersRemaining} ${bottleString} of beer. `
+      + `Take one down and pass it around, ${beersRemaining--, beersRemaining} ${getBottleString(beersRemaining)} of beer on the wall.`;
     console.info(lineOfSong);
   }
   console.info('No more bottles of beer on the wall, no more bottles of beer.');
