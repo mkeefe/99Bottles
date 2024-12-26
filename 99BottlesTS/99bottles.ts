@@ -2,7 +2,9 @@ let totalBeers: number = 99;
 
 const getBottleString = (beer: number): string => beer == 1 ? 'bottle' : 'bottles';
 
-const playSong = () => {
+const playSong = (withInfo: boolean = true) => {
+  if (withInfo) console.info('[Start song]');
+
   for (let i: number = totalBeers;  i > 0; i--) {
     let bottleString = getBottleString(i);
     let lineOfSong = `${i} ${bottleString} of beer on the wall, ${i} ${bottleString} of beer. `
@@ -10,8 +12,8 @@ const playSong = () => {
     console.info(lineOfSong);
   }
   console.info('No more bottles of beer on the wall, no more bottles of beer.');
+
+  if (withInfo) console.info('[End Song]');
 };
 
-console.info('[Start song]');
 playSong();
-console.info('[End Song]');
