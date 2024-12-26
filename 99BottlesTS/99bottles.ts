@@ -1,15 +1,13 @@
 let totalBeers: number = 99;
 
-const getBottleString = (beer: number): string => {
-  return beer == 1 ? 'bottle' : 'bottles';
-};
+const getBottleString = (beer: number): string => beer == 1 ? 'bottle' : 'bottles';
 
 const playSong = () => {
-  for (let i:number = totalBeers;  i > 0; i--) {
+  for (let i: number = totalBeers;  i > 0; i--) {
     let bottleString = getBottleString(i);
     let lineOfSong = `${i} ${bottleString} of beer on the wall, ${i} ${bottleString} of beer. `
-    lineOfSong += `Take one down and pass it around, ${i-1} ${getBottleString(i-1)} of beer on the wall.`
-    console.log(lineOfSong)
+      + `Take one down and pass it around, ${i-1} ${getBottleString(i-1)} of beer on the wall.`;
+    console.log(lineOfSong);
   }
   console.info('No more bottles of beer on the wall, no more bottles of beer.');
 };
